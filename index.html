@@ -8,8 +8,9 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
         body { font-family: 'Inter', system-ui, sans-serif; }
+        
         .hero-bg {
             background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('https://picsum.photos/id/1015/2000/1200') center/cover no-repeat;
         }
@@ -18,6 +19,15 @@
         }
         .naviga-gold { color: #C9A66B; }
         .naviga-blue-bg { background-color: #00255a; }
+
+        /* Premium Mobile Menu Animation */
+        .mobile-menu {
+            animation: slideIn 0.3s ease forwards;
+        }
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-900 dark:bg-zinc-950 dark:text-white transition-colors duration-300">
@@ -29,7 +39,8 @@
                 <img src="naviga-logo.png" alt="Naviga GmbH" class="h-11 w-auto block dark:hidden">
                 <img src="naviga-logo-dark.png" alt="Naviga GmbH" class="h-11 w-auto hidden dark:block">
             </div>
-            
+
+            <!-- Desktop Menu -->
             <div class="hidden md:flex items-center gap-8 text-sm font-medium">
                 <a href="#privat" class="hover:text-[#00255a] dark:hover:text-[#C9A66B] transition">Privatpersonen</a>
                 <a href="#hypothek" class="hover:text-[#00255a] dark:hover:text-[#C9A66B] transition">Hypotheken</a>
@@ -44,28 +55,44 @@
                 </button>
                 <a href="#anfrage" class="naviga-blue-bg hover:bg-[#001c4a] dark:bg-white dark:text-[#00255a] dark:hover:bg-gray-200 text-white px-6 py-3 rounded-2xl text-sm font-semibold flex items-center gap-2 transition">
                     <i class="fa-solid fa-handshake"></i>
-                    Kostenloses Erstgespräch
+                    <span class="hidden sm:inline">Kostenloses Erstgespräch</span>
                 </a>
+
+                <!-- Hamburger Button -->
+                <button onclick="toggleMobileMenu()" class="md:hidden text-3xl text-gray-700 dark:text-white">
+                    <i id="hamburger-icon" class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-zinc-900 border-t dark:border-zinc-800 px-6 py-6 mobile-menu">
+            <div class="flex flex-col gap-6 text-lg font-medium">
+                <a href="#privat" onclick="toggleMobileMenu()" class="hover:text-[#00255a] dark:hover:text-[#C9A66B]">Privatpersonen</a>
+                <a href="#hypothek" onclick="toggleMobileMenu()" class="hover:text-[#00255a] dark:hover:text-[#C9A66B]">Hypotheken</a>
+                <a href="#anfrage" onclick="toggleMobileMenu()" class="hover:text-[#00255a] dark:hover:text-[#C9A66B]">Ihre Anfrage</a>
+                <a href="#team" onclick="toggleMobileMenu()" class="hover:text-[#00255a] dark:hover:text-[#C9A66B]">Team</a>
+                <a href="#blog" onclick="toggleMobileMenu()" class="hover:text-[#00255a] dark:hover:text-[#C9A66B]">Blog</a>
             </div>
         </div>
     </nav>
 
     <!-- HERO -->
-    <header class="hero-bg text-white py-24">
+    <header class="hero-bg text-white py-20 md:py-24">
         <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
             <div>
-                <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md text-white text-sm px-4 py-2 rounded-3xl mb-6">
+                <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md text-white text-sm px-5 py-2.5 rounded-3xl mb-6">
                     Aktuelle Hypothekenzinsen 2026 – ab 1,25 %
                 </div>
-                <h1 class="text-5xl md:text-6xl font-semibold leading-tight tracking-tighter">
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-semibold leading-tight tracking-tighter">
                     Ihr Eigenheim in der Schweiz.<br>
                     <span class="naviga-gold">Mit Klarheit &amp; Sicherheit.</span>
                 </h1>
-                <p class="mt-6 text-xl text-white/90 max-w-lg">
+                <p class="mt-6 text-lg md:text-xl text-white/90 max-w-lg">
                     Naviga GmbH – unabhängige Hypothekenberatung für Privatpersonen.
                 </p>
                 <div class="mt-10">
-                    <a href="#anfrage" class="naviga-blue-bg hover:bg-[#001c4a] dark:bg-white dark:text-[#00255a] dark:hover:bg-gray-200 text-white px-8 py-4 rounded-3xl font-semibold text-lg flex items-center gap-3 inline-flex shadow-xl transition">
+                    <a href="#anfrage" class="naviga-blue-bg hover:bg-[#001c4a] dark:bg-white dark:text-[#00255a] dark:hover:bg-gray-200 text-white px-8 py-5 rounded-3xl font-semibold text-lg flex items-center gap-3 inline-flex shadow-xl transition">
                         <i class="fa-solid fa-calculator"></i>
                         Kostenlose Finanzanalyse starten
                     </a>
@@ -104,7 +131,7 @@
         </div>
     </section>
 
-    <!-- DAS NAVIGA TEAM – mit deinen echten Bildern -->
+    <!-- DAS NAVIGA TEAM -->
     <section id="team" class="py-20 bg-white dark:bg-zinc-900">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-12">
@@ -113,7 +140,6 @@
             </div>
 
             <div class="grid md:grid-cols-4 gap-8">
-                <!-- Emmanuel -->
                 <div class="text-center">
                     <div class="mx-auto w-32 h-32 rounded-full overflow-hidden mb-4 border-4 border-white dark:border-zinc-800 shadow-md">
                         <img src="Emmanuel.jpg" alt="Emmanuel Bertsch" class="w-full h-full object-cover">
@@ -122,8 +148,6 @@
                     <p class="text-[#00255a] dark:text-[#C9A66B]">"Aussenminister"</p>
                     <p class="text-sm text-gray-600 dark:text-zinc-400 mt-1">Versicherungsvermittler VBV<br>Zert. Vermögensberater IAF</p>
                 </div>
-
-                <!-- Gabriel -->
                 <div class="text-center">
                     <div class="mx-auto w-32 h-32 rounded-full overflow-hidden mb-4 border-4 border-white dark:border-zinc-800 shadow-md">
                         <img src="Gabriel.jpg" alt="Gabriel Mathys" class="w-full h-full object-cover">
@@ -132,8 +156,6 @@
                     <p class="text-[#00255a] dark:text-[#C9A66B]">"Schatzmeister"</p>
                     <p class="text-sm text-gray-600 dark:text-zinc-400 mt-1">B.Sc. Business Administration<br>Dipl. Finanzberater IAF</p>
                 </div>
-
-                <!-- Levin -->
                 <div class="text-center">
                     <div class="mx-auto w-32 h-32 rounded-full overflow-hidden mb-4 border-4 border-white dark:border-zinc-800 shadow-md">
                         <img src="Levin.jpg" alt="Levin Röthlisberger" class="w-full h-full object-cover">
@@ -142,8 +164,6 @@
                     <p class="text-[#00255a] dark:text-[#C9A66B]">"Finanzpanzer"</p>
                     <p class="text-sm text-gray-600 dark:text-zinc-400 mt-1">Versicherungsvermittler VBV<br>Dipl. Finanzberater IAF</p>
                 </div>
-
-                <!-- Kaspar -->
                 <div class="text-center">
                     <div class="mx-auto w-32 h-32 rounded-full overflow-hidden mb-4 border-4 border-white dark:border-zinc-800 shadow-md">
                         <img src="Kaspar.jpg" alt="Kaspar Matthäus" class="w-full h-full object-cover">
@@ -252,12 +272,27 @@
             icon.classList.toggle('fa-sun', isDark);
         }
 
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('hamburger-icon');
+            menu.classList.toggle('hidden');
+            if (icon.classList.contains('fa-bars')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            } else {
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            }
+        }
+
         function handleAnfrage(e) {
             e.preventDefault();
             const selected = document.querySelector('input[name="wunsch"]:checked').value;
             const name = document.getElementById('name').value || "Sie";
             alert(`✅ Anfrage für „${selected}“ wurde gesendet!\n\nWir melden uns innerhalb von 24 Stunden bei ${name}.`);
             e.target.reset();
+            const menu = document.getElementById('mobile-menu');
+            if (!menu.classList.contains('hidden')) toggleMobileMenu();
         }
 
         window.onload = () => {
