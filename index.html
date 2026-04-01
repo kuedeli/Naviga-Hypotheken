@@ -10,7 +10,7 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
         body { font-family: 'Inter', system-ui, sans-serif; }
-        
+
         .hero-bg {
             background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('https://picsum.photos/id/1015/2000/1200') center/cover no-repeat;
         }
@@ -20,13 +20,31 @@
         .naviga-gold { color: #C9A66B; }
         .naviga-blue-bg { background-color: #00255a; }
 
-        /* Premium Mobile Menu Animation */
+        /* Animations */
+        .animate-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .animate-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
         .mobile-menu {
-            animation: slideIn 0.3s ease forwards;
+            animation: slideIn 0.4s cubic-bezier(0.32, 0.72, 0, 1) forwards;
         }
         @keyframes slideIn {
-            from { transform: translateX(100%); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
+            from { transform: translateX(100%); }
+            to { transform: translateX(0); }
+        }
+
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-4px) scale(1.03);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
         }
     </style>
 </head>
@@ -40,7 +58,6 @@
                 <img src="naviga-logo-dark.png" alt="Naviga GmbH" class="h-11 w-auto hidden dark:block">
             </div>
 
-            <!-- Desktop Menu -->
             <div class="hidden md:flex items-center gap-8 text-sm font-medium">
                 <a href="#privat" class="hover:text-[#00255a] dark:hover:text-[#C9A66B] transition">Privatpersonen</a>
                 <a href="#hypothek" class="hover:text-[#00255a] dark:hover:text-[#C9A66B] transition">Hypotheken</a>
@@ -58,7 +75,6 @@
                     <span class="hidden sm:inline">Kostenloses Erstgespräch</span>
                 </a>
 
-                <!-- Hamburger Button -->
                 <button onclick="toggleMobileMenu()" class="md:hidden text-3xl text-gray-700 dark:text-white">
                     <i id="hamburger-icon" class="fa-solid fa-bars"></i>
                 </button>
@@ -80,7 +96,7 @@
     <!-- HERO -->
     <header class="hero-bg text-white py-20 md:py-24">
         <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-            <div>
+            <div class="animate-in" id="hero-content">
                 <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md text-white text-sm px-5 py-2.5 rounded-3xl mb-6">
                     Aktuelle Hypothekenzinsen 2026 – ab 1,25 %
                 </div>
@@ -92,7 +108,7 @@
                     Naviga GmbH – unabhängige Hypothekenberatung für Privatpersonen.
                 </p>
                 <div class="mt-10">
-                    <a href="#anfrage" class="naviga-blue-bg hover:bg-[#001c4a] dark:bg-white dark:text-[#00255a] dark:hover:bg-gray-200 text-white px-8 py-5 rounded-3xl font-semibold text-lg flex items-center gap-3 inline-flex shadow-xl transition">
+                    <a href="#anfrage" class="naviga-blue-bg hover:bg-[#001c4a] dark:bg-white dark:text-[#00255a] dark:hover:bg-gray-200 text-white px-8 py-5 rounded-3xl font-semibold text-lg flex items-center gap-3 inline-flex shadow-xl transition hover:scale-105">
                         <i class="fa-solid fa-calculator"></i>
                         Kostenlose Finanzanalyse starten
                     </a>
@@ -107,22 +123,22 @@
     <!-- PRIVATPERSONEN -->
     <section id="privat" class="py-20 bg-white dark:bg-zinc-900">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-12">
+            <div class="text-center mb-12 animate-in" id="section-privat">
                 <span class="text-[#00255a] dark:text-[#C9A66B] font-semibold tracking-widest">PRIVATPERSONEN</span>
                 <h2 class="text-4xl font-semibold mt-3 dark:text-white">Klarheit in Ihren Finanzen</h2>
             </div>
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-gray-50 dark:bg-zinc-800 rounded-3xl p-8 hover:shadow-xl transition">
+                <div class="animate-in card-hover bg-gray-50 dark:bg-zinc-800 rounded-3xl p-8 hover:shadow-xl transition">
                     <div class="text-4xl mb-6">👨‍👧‍👦</div>
                     <h4 class="font-semibold text-xl dark:text-white">Junge Familie – Erstes Eigenheim</h4>
                     <p class="mt-3 text-gray-600 dark:text-zinc-400">Tragbarkeit, Eigenkapital und 2./3. Säule optimieren.</p>
                 </div>
-                <div class="bg-gray-50 dark:bg-zinc-800 rounded-3xl p-8 hover:shadow-xl transition">
+                <div class="animate-in card-hover bg-gray-50 dark:bg-zinc-800 rounded-3xl p-8 hover:shadow-xl transition">
                     <div class="text-4xl mb-6">💼</div>
                     <h4 class="font-semibold text-xl dark:text-white">Berufstätige Singles &amp; Paare</h4>
                     <p class="mt-3 text-gray-600 dark:text-zinc-400">Jobwechsel, Lohnerhöhung – alles in einer Finanzplanung.</p>
                 </div>
-                <div class="bg-gray-50 dark:bg-zinc-800 rounded-3xl p-8 hover:shadow-xl transition">
+                <div class="animate-in card-hover bg-gray-50 dark:bg-zinc-800 rounded-3xl p-8 hover:shadow-xl transition">
                     <div class="text-4xl mb-6">👴</div>
                     <h4 class="font-semibold text-xl dark:text-white">Zukünftige Pensionierte</h4>
                     <p class="mt-3 text-gray-600 dark:text-zinc-400">Nachlassplanung &amp; Altersvorsorge mit Eigenheim.</p>
@@ -134,13 +150,13 @@
     <!-- DAS NAVIGA TEAM -->
     <section id="team" class="py-20 bg-white dark:bg-zinc-900">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-12">
+            <div class="text-center mb-12 animate-in" id="section-team">
                 <span class="text-[#00255a] dark:text-[#C9A66B] font-semibold tracking-widest">DAS NAVIGA TEAM</span>
                 <h2 class="text-4xl font-semibold mt-3 dark:text-white">Wir sind Naviga</h2>
             </div>
 
             <div class="grid md:grid-cols-4 gap-8">
-                <div class="text-center">
+                <div class="animate-in card-hover text-center">
                     <div class="mx-auto w-32 h-32 rounded-full overflow-hidden mb-4 border-4 border-white dark:border-zinc-800 shadow-md">
                         <img src="Emmanuel.jpg" alt="Emmanuel Bertsch" class="w-full h-full object-cover">
                     </div>
@@ -148,7 +164,7 @@
                     <p class="text-[#00255a] dark:text-[#C9A66B]">"Aussenminister"</p>
                     <p class="text-sm text-gray-600 dark:text-zinc-400 mt-1">Versicherungsvermittler VBV<br>Zert. Vermögensberater IAF</p>
                 </div>
-                <div class="text-center">
+                <div class="animate-in card-hover text-center">
                     <div class="mx-auto w-32 h-32 rounded-full overflow-hidden mb-4 border-4 border-white dark:border-zinc-800 shadow-md">
                         <img src="Gabriel.jpg" alt="Gabriel Mathys" class="w-full h-full object-cover">
                     </div>
@@ -156,7 +172,7 @@
                     <p class="text-[#00255a] dark:text-[#C9A66B]">"Schatzmeister"</p>
                     <p class="text-sm text-gray-600 dark:text-zinc-400 mt-1">B.Sc. Business Administration<br>Dipl. Finanzberater IAF</p>
                 </div>
-                <div class="text-center">
+                <div class="animate-in card-hover text-center">
                     <div class="mx-auto w-32 h-32 rounded-full overflow-hidden mb-4 border-4 border-white dark:border-zinc-800 shadow-md">
                         <img src="Levin.jpg" alt="Levin Röthlisberger" class="w-full h-full object-cover">
                     </div>
@@ -164,7 +180,7 @@
                     <p class="text-[#00255a] dark:text-[#C9A66B]">"Finanzpanzer"</p>
                     <p class="text-sm text-gray-600 dark:text-zinc-400 mt-1">Versicherungsvermittler VBV<br>Dipl. Finanzberater IAF</p>
                 </div>
-                <div class="text-center">
+                <div class="animate-in card-hover text-center">
                     <div class="mx-auto w-32 h-32 rounded-full overflow-hidden mb-4 border-4 border-white dark:border-zinc-800 shadow-md">
                         <img src="Kaspar.jpg" alt="Kaspar Matthäus" class="w-full h-full object-cover">
                     </div>
@@ -179,7 +195,7 @@
     <!-- ANFRAGE FORMULAR -->
     <section id="anfrage" class="py-20 bg-white dark:bg-zinc-900">
         <div class="max-w-4xl mx-auto px-6">
-            <div class="text-center mb-12">
+            <div class="text-center mb-12 animate-in" id="section-anfrage">
                 <span class="text-[#00255a] dark:text-[#C9A66B] font-semibold tracking-widest">JETZT ANFRAGEN</span>
                 <h2 class="text-4xl font-semibold mt-3 dark:text-white">Welche Finanzierung brauchen Sie?</h2>
                 <p class="mt-4 text-gray-600 dark:text-zinc-400">Wählen Sie Ihr Anliegen – wir melden uns innerhalb von 24 Stunden.</p>
@@ -237,7 +253,7 @@
     <!-- UNSERE BERATUNG IN AKTION -->
     <section class="py-16 bg-white dark:bg-zinc-900">
         <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-4xl font-semibold text-center mb-10 dark:text-white">Unsere Beratung in Aktion</h2>
+            <h2 class="text-4xl font-semibold text-center mb-10 dark:text-white animate-in" id="section-aktion">Unsere Beratung in Aktion</h2>
             <div class="grid md:grid-cols-2 gap-8 items-center">
                 <img src="naviga-seminar.jpg" alt="Naviga Seminar" class="rounded-3xl shadow-xl">
                 <div class="text-center md:text-left">
@@ -263,6 +279,19 @@
 
     <script>
         tailwind.config = { darkMode: 'class' };
+
+        // Scroll Animations
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.animate-in');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.15 });
+            elements.forEach(el => observer.observe(el));
+        }
 
         function toggleDarkMode() {
             const isDark = document.documentElement.classList.toggle('dark');
@@ -299,6 +328,7 @@
             if (localStorage.getItem('darkMode') === 'true' || window.matchMedia('(prefers-color-scheme: dark)').matches) {
                 document.documentElement.classList.add('dark');
             }
+            animateOnScroll();
         };
     </script>
 </body>
