@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Naviga GmbH – Ihre unabhängige Hypothekenberatung für den Kauf Ihres Eigenheims in der Schweiz. Kostenlose Finanzanalyse & maßgeschneiderte Lösungen.">
+    <title>Naviga GmbH | Hypotheken & Eigenheimfinanzierung – Klarheit für Privatpersonen</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body { font-family: 'Inter', system-ui, sans-serif; }
+        .hero-bg {
+            background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('https://picsum.photos/id/1015/2000/1200') center/cover no-repeat;
+        }
+        .naviga-green { color: #00A86B; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+    <!-- NAVBAR -->
+    <nav class="bg-white border-b sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <i class="fa-solid fa-compass text-3xl naviga-green"></i>
+                <div>
+                    <span class="text-2xl font-bold tracking-tight">naviga</span>
+                    <span class="text-xs font-medium text-gray-500 block -mt-1">GmbH</span>
+                </div>
+            </div>
+            
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+                <a href="#privat" class="hover:text-[#00A86B] transition">Privatpersonen</a>
+                <a href="#hypothek" class="hover:text-[#00A86B] transition">Hypotheken</a>
+                <a href="#eigenheim" class="hover:text-[#00A86B] transition">Eigenheim finanzieren</a>
+                <a href="#blog" class="hover:text-[#00A86B] transition">Blog</a>
+                <a href="https://www.naviga.ch/kontakt" target="_blank" class="hover:text-[#00A86B] transition">Kontakt</a>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <a href="#kennenlernen" 
+                   class="bg-[#00A86B] hover:bg-emerald-700 text-white px-6 py-3 rounded-2xl text-sm font-semibold flex items-center gap-2 transition">
+                    <i class="fa-solid fa-handshake"></i>
+                    Kostenloses Erstgespräch
+                </a>
+                <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" 
+                        class="md:hidden text-2xl">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t px-6 py-4 text-sm font-medium space-y-4">
+            <a href="#privat" class="block py-2">Privatpersonen</a>
+            <a href="#hypothek" class="block py-2">Hypotheken</a>
+            <a href="#eigenheim" class="block py-2">Eigenheim finanzieren</a>
+            <a href="#blog" class="block py-2">Blog</a>
+            <a href="https://www.naviga.ch/kontakt" target="_blank" class="block py-2">Kontakt</a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="hero-bg text-white py-24">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md text-white text-sm px-4 py-2 rounded-3xl mb-6">
+                    <span class="relative flex h-3 w-3">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+                    </span>
+                    Aktuelle Hypothekenzinsen 2026 – ab 1,25 %
+                </div>
+                
+                <h1 class="text-5xl md:text-6xl font-semibold leading-tight tracking-tighter">
+                    Ihr Eigenheim in der Schweiz.<br>
+                    <span class="naviga-green">Mit Klarheit & Sicherheit.</span>
+                </h1>
+                
+                <p class="mt-6 text-xl text-white/90 max-w-lg">
+                    Naviga GmbH – unabhängige Hypothekenberatung für Privatpersonen. 
+                    Wir begleiten Sie Schritt für Schritt zu Ihrer perfekten Finanzierung – auf Augenhöhe und ganzheitlich.
+                </p>
+
+                <div class="mt-10 flex flex-wrap gap-4">
+                    <a href="#kennenlernen" 
+                       class="bg-white text-[#00A86B] hover:bg-emerald-100 px-8 py-4 rounded-3xl font-semibold text-lg flex items-center gap-3 shadow-xl">
+                        <i class="fa-solid fa-calculator"></i>
+                        Kostenlose Finanzanalyse starten
+                    </a>
+                    <a href="https://www.naviga.ch/privatpersonen" target="_blank"
+                       class="border border-white/70 hover:border-white px-8 py-4 rounded-3xl font-medium flex items-center gap-3">
+                        Mehr über Naviga erfahren →
+                    </a>
+                </div>
+
+                <div class="mt-12 flex items-center gap-8 text-sm">
+                    <div class="flex -space-x-4">
+                        <div class="w-8 h-8 bg-white rounded-2xl flex items-center justify-center text-[#00A86B] shadow">🇨🇭</div>
+                        <div class="w-8 h-8 bg-white rounded-2xl flex items-center justify-center text-[#00A86B] shadow">🏠</div>
+                    </div>
+                    <div>
+                        <p class="font-medium">Baar • Bern • Schweizweit</p>
+                        <p class="text-white/70 text-xs">Über 1.200 glückliche Eigenheim-Besitzer:innen</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hidden md:block bg-white/10 backdrop-blur-xl rounded-3xl p-8 text-white border border-white/30">
+                <div class="text-center mb-6">
+                    <p class="text-emerald-300 text-sm font-medium">Ihr persönlicher Hypothekenrechner</p>
+                    <h3 class="text-3xl font-semibold">Wie viel Haus können Sie sich leisten?</h3>
+                </div>
+                <div class="space-y-6">
+                    <div>
+                        <label class="block text-xs uppercase mb-2">Objektwert</label>
+                        <input type="text" value="CHF 850.000" class="w-full bg-white/20 border border-white/30 rounded-2xl px-6 py-4 text-white placeholder:text-white/50">
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs uppercase mb-2">Eigenkapital</label>
+                            <input type="text" value="CHF 170.000" class="w-full bg-white/20 border border-white/30 rounded-2xl px-6 py-4 text-white">
+                        </div>
+                        <div>
+                            <label class="block text-xs uppercase mb-2">Monatliches Einkommen</label>
+                            <input type="text" value="CHF 9.500" class="w-full bg-white/20 border border-white/30 rounded-2xl px-6 py-4 text-white">
+                        </div>
+                    </div>
+                    <button onclick="alert('🚀 In der echten Naviga-Beratung erhalten Sie jetzt den besten Markt-Zins!')" 
+                            class="w-full bg-[#00A86B] py-4 rounded-3xl font-semibold text-lg">
+                        Jetzt besten Zins berechnen
+                    </button>
+                    <p class="text-xs text-center text-white/60">*Unverbindlich • Basierend auf aktuellen Marktbedingungen 2026</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- TRUST BAR -->
+    <div class="bg-white py-6 border-b">
+        <div class="max-w-7xl mx-auto px-6 flex flex-wrap justify-center items-center gap-x-12 gap-y-6 text-sm text-gray-500">
+            <div class="flex items-center gap-2"><i class="fa-solid fa-shield-halved text-[#00A86B]"></i> Unabhängig</div>
+            <div class="flex items-center gap-2"><i class="fa-solid fa-hand-holding-dollar text-[#00A86B]"></i> Bester Markt-Zins</div>
+            <div class="flex items-center gap-2"><i class="fa-solid fa-users text-[#00A86B]"></i> Holistische Beratung</div>
+            <div class="flex items-center gap-2"><i class="fa-solid fa-house text-[#00A86B]"></i> Über 10 Jahre Erfahrung</div>
+            <div class="flex items-center gap-2"><i class="fa-solid fa-map-marker-alt text-[#00A86B]"></i> Baar & Bern</div>
+        </div>
+    </div>
+
+    <!-- PRIVATPERSONEN SECTION (deep analysis of the real page) -->
+    <section id="privat" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <span class="text-[#00A86B] font-semibold tracking-widest">PRIVATPERSONEN</span>
+                <h2 class="text-4xl font-semibold mt-3">Klarheit in Ihren Finanzen – speziell für Ihr Eigenheim</h2>
+                <p class="mt-4 max-w-2xl mx-auto text-gray-600">Genau wie auf naviga.ch/privatpersonen beschrieben: Wir begleiten Sie auf Augenhöhe. Hypothekenberatung ist nur ein Teil unserer ganzheitlichen Unterstützung.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Persona 1 -->
+                <div class="bg-gray-50 rounded-3xl p-8 hover:shadow-xl transition">
+                    <div class="text-4xl mb-6">👨‍👧‍👦</div>
+                    <h4 class="font-semibold text-xl">Junge Familie – Erstes Eigenheim</h4>
+                    <p class="mt-3 text-gray-600">Sie planen den Umzug ins eigene Zuhause? Wir prüfen Tragbarkeit (max. 33 %), Eigenkapital und optimieren Ihre 2. und 3. Säule für die beste Finanzierung.</p>
+                    <ul class="mt-6 space-y-3 text-sm">
+                        <li class="flex gap-2"><i class="fa-solid fa-check text-[#00A86B]"></i> Familienereignisse (Kinder, Heirat)</li>
+                        <li class="flex gap-2"><i class="fa-solid fa-check text-[#00A86B]"></i> Wohnveränderung & Eigenheim</li>
+                        <li class="flex gap-2"><i class="fa-solid fa-check text-[#00A86B]"></i> Kostenlose Finanzanalyse</li>
+                    </ul>
+                </div>
+
+                <!-- Persona 2 -->
+                <div class="bg-gray-50 rounded-3xl p-8 hover:shadow-xl transition">
+                    <div class="text-4xl mb-6">💼</div>
+                    <h4 class="font-semibold text-xl">Berufstätige Singles / Paare</h4>
+                    <p class="mt-3 text-gray-600">Jobwechsel, Lohnerhöhung oder Auszeit? Wir integrieren Ihre Hypothek nahtlos in Ihre gesamte Finanzplanung – inkl. Steuern und Absicherung.</p>
+                    <ul class="mt-6 space-y-3 text-sm">
+                        <li class="flex gap-2"><i class="fa-solid fa-check text-[#00A86B]"></i> Berufliche Veränderungen</li>
+                        <li class="flex gap-2"><i class="fa-solid fa-check text-[#00A86B]"></i> Immobilieninvestitionen</li>
+                        <li class="flex gap-2"><i class="fa-solid fa-check text-[#00A86B]"></i> Hypothekenberatung</li>
+                    </ul>
+                </div>
+
+                <!-- Persona 3 -->
+                <div class="bg-gray-50 rounded-3xl p-8 hover:shadow-xl transition">
+                    <div class="text-4xl mb-6">👴</div>
+                    <h4 class="font-semibold text-xl">Zukünftige Pensionierte</h4>
+                    <p class="mt-3 text-gray-600">Nachlassplanung & Eigenheim als Altersvorsorge? Wir verbinden Ihre Hypothek mit 2. Säule, Freizügigkeitskonto und langfristiger Sicherheit.</p>
+                    <ul class="mt-6 space-y-3 text-sm">
+                        <li class="flex gap-2"><i class="fa-solid fa-check text-[#00A86B]"></i> Ruhestand & Nachlass</li>
+                        <li class="flex gap-2"><i class="fa-solid fa-check text-[#00A86B]"></i> Ganzheitliche Finanzplanung</li>
+                        <li class="flex gap-2"><i class="fa-solid fa-check text-[#00A86B]"></i> Versicherungsschutz</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HYPOTHEKEN SECTION -->
+    <section id="hypothek" class="py-20 bg-[#F8FAF9]">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-4xl font-semibold text-center">Ihre Hypothek – maßgeschneidert für die Schweiz</h2>
+            <p class="text-center mt-4 max-w-md mx-auto text-gray-600">Festhypothek, SARON-Hypothek oder variable Lösung? Wir vergleichen den gesamten Markt und finden genau das, was zu Ihnen passt.</p>
+
+            <div class="mt-16 grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white rounded-3xl p-7 shadow-sm">
+                    <div class="text-[#00A86B] text-sm font-semibold mb-2">FESTHYPOTHEK</div>
+                    <div class="text-4xl font-semibold">ab 1,25 %</div>
+                    <p class="text-gray-500 text-sm mt-1">2–10 Jahre Laufzeit</p>
+                    <p class="mt-8 text-gray-600">Planungssicherheit für Ihr Eigenheim</p>
+                </div>
+                <div class="bg-white rounded-3xl p-7 shadow-sm">
+                    <div class="text-[#00A86B] text-sm font-semibold mb-2">SARON-HYPOTHEK</div>
+                    <div class="text-4xl font-semibold">flexibel</div>
+                    <p class="text-gray-500 text-sm mt-1">+ Marge ab 1,05 %</p>
+                    <p class="mt-8 text-gray-600">Aktuell günstig & anpassungsfähig (Stand April 2026)</p>
+                </div>
+                <div class="bg-white rounded-3xl p-7 shadow-sm">
+                    <div class="text-[#00A86B] text-sm font-semibold mb-2">TRAGBARKEIT</div>
+                    <div class="text-4xl font-semibold">33 %</div>
+                    <p class="text-gray-500 text-sm mt-1">Richtwert der Banken</p>
+                    <p class="mt-8 text-gray-600">Wir prüfen, ob Ihre Finanzierung langfristig tragbar ist</p>
+                </div>
+                <div class="bg-white rounded-3xl p-7 shadow-sm">
+                    <div class="text-[#00A86B] text-sm font-semibold mb-2">BELEHNUNG</div>
+                    <div class="text-4xl font-semibold">max. 80 %</div>
+                    <p class="text-gray-500 text-sm mt-1">des Objektwerts</p>
+                    <p class="mt-8 text-gray-600">Rest mit Eigenkapital / 2. Säule</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-4xl font-semibold text-center mb-4">So einfach geht’s – Ihr Weg zum Eigenheim</h2>
+            <div class="grid md:grid-cols-4 gap-8 mt-16">
+                <div class="text-center">
+                    <div class="mx-auto w-12 h-12 bg-[#00A86B] text-white rounded-2xl flex items-center justify-center text-2xl font-bold">1</div>
+                    <h4 class="font-semibold mt-6">Kennenlernen</h4>
+                    <p class="text-sm text-gray-600 mt-3">Kostenloses 30-Minuten-Erstgespräch</p>
+                </div>
+                <div class="text-center">
+                    <div class="mx-auto w-12 h-12 bg-[#00A86B] text-white rounded-2xl flex items-center justify-center text-2xl font-bold">2</div>
+                    <h4 class="font-semibold mt-6">Analyse</h4>
+                    <p class="text-sm text-gray-600 mt-3">Ihre persönliche Finanz-Situation + Hypothekenrechner</p>
+                </div>
+                <div class="text-center">
+                    <div class="mx-auto w-12 h-12 bg-[#00A86B] text-white rounded-2xl flex items-center justify-center text-2xl font-bold">3</div>
+                    <h4 class="font-semibold mt-6">Vergleich</h4>
+                    <p class="text-sm text-gray-600 mt-3">Marktvergleich von über 30 Anbietern</p>
+                </div>
+                <div class="text-center">
+                    <div class="mx-auto w-12 h-12 bg-[#00A86B] text-white rounded-2xl flex items-center justify-center text-2xl font-bold">4</div>
+                    <h4 class="font-semibold mt-6">Abschluss</h4>
+                    <p class="text-sm text-gray-600 mt-3">Vertrag + langfristige Begleitung</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BLOG POST (bottom of page) -->
+    <section id="blog" class="py-20 bg-white border-t">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-12 gap-12">
+                <div class="lg:col-span-7">
+                    <span class="uppercase text-xs tracking-widest font-medium text-[#00A86B]">Blog • 01. April 2026</span>
+                    <h2 class="text-4xl font-semibold mt-3 leading-tight">Hypotheken in der Schweiz 2026: Was Sie jetzt wissen müssen, bevor Sie Ihr Eigenheim kaufen</h2>
+                    
+                    <div class="prose mt-10 text-gray-700">
+                        <p>Die Zinsen haben sich stabilisiert – SARON-Hypotheken sind wieder attraktiv, Festhypotheken liegen bei 1,25–1,95 % je nach Laufzeit. Doch die Tragbarkeitsrechnung mit 5 % Puffer bleibt streng. Viele Familien überschätzen ihre Möglichkeiten.</p>
+                        
+                        <h4>Die 3 größten Fehler bei der Eigenheim-Finanzierung</h4>
+                        <ol class="list-decimal pl-5 space-y-4 mt-6">
+                            <li><strong>Nur auf den Zins schauen</strong> – Nebenkosten, Steuern und Unterhalt vergessen.</li>
+                            <li><strong>Zu wenig Eigenkapital</strong> – Mindestens 20 % sind Pflicht. Mit 2. Säule optimieren!</li>
+                            <li><strong>Keine ganzheitliche Planung</strong> – Naviga betrachtet immer Ihre gesamte Finanzsituation: Versicherungen, Pension, Steuern.</li>
+                        </ol>
+                        
+                        <p class="mt-8">Bei Naviga erhalten Sie nicht nur eine Hypothek – sondern eine komplette Finanz-Roadmap für die nächsten 20 Jahre.</p>
+                    </div>
+                </div>
+
+                <!-- Sidebar CTA -->
+                <div class="lg:col-span-5 bg-[#F8FAF9] rounded-3xl p-10 flex flex-col justify-between">
+                    <div>
+                        <i class="fa-solid fa-newspaper text-5xl text-[#00A86B]"></i>
+                        <h3 class="text-2xl font-semibold mt-8">Mehr erfahren über die aktuelle Lage auf dem Schweizer Hypothekenmarkt</h3>
+                        <p class="mt-4 text-gray-600">In unserem monatlichen Update erklären wir verständlich, wie SNB-Leitzins, Inflation und Immobilienpreise Ihre Finanzierung beeinflussen.</p>
+                    </div>
+                    
+                    <a href="#kennenlernen" 
+                       class="mt-12 inline-flex items-center justify-center gap-3 bg-[#00A86B] text-white font-semibold py-5 px-10 rounded-3xl text-lg w-full md:w-auto">
+                        Jetzt Blog-Artikel lesen & kostenlose Analyse sichern
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    
+                    <p class="text-xs text-gray-500 mt-6 text-center">Direkt aus der Naviga-Beratungspraxis – für Privatpersonen wie Sie.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <div id="kennenlernen" class="bg-[#00A86B] text-white py-16">
+        <div class="max-w-4xl mx-auto text-center px-6">
+            <h2 class="text-4xl font-semibold">Bereit für Ihr Eigenheim?</h2>
+            <p class="mt-6 text-xl opacity-90">Sichern Sie sich heute noch Ihr kostenloses & unverbindliches Erstgespräch mit einem Naviga-Berater.</p>
+            
+            <a href="mailto:admin@naviga.ch?subject=Erstgespräch%20Eigenheimfinanzierung" 
+               class="mt-10 inline-flex items-center bg-white text-[#00A86B] px-10 py-6 rounded-3xl text-2xl font-semibold hover:scale-105 transition">
+                Jetzt Termin buchen →
+            </a>
+            
+            <p class="text-sm mt-8 opacity-75">Antwort innerhalb von 48 Stunden • Standorte in Baar und Bern</p>
+            <p class="text-xs mt-4">Naviga GmbH • Sihlbruggstrasse 105, 6340 Baar • admin@naviga.ch</p>
+        </div>
+    </div>
+
+    <footer class="bg-gray-900 text-white/70 py-12 text-sm">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            © 2026 Naviga GmbH • Navigation durch die Finanzwelt<br>
+            Privatpersonen • Hypothekenberatung • Ganzheitliche Finanzplanung
+        </div>
+    </footer>
+
+    <script>
+        // Tailwind script already loaded
+        console.log('%c✅ Naviga Landing Page (Code Fast Mode) geladen – basierend auf echter Analyse von naviga.ch/privatpersonen', 'color:#00A86B; font-weight:bold');
+    </script>
+</body>
+</html>
