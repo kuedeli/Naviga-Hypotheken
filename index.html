@@ -8,23 +8,70 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-        body { font-family: 'Inter', system-ui, sans-serif; }
+        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap');
+        body { 
+            font-family: 'IBM Plex Sans', system-ui, sans-serif; 
+            -webkit-font-smoothing: antialiased;
+        }
+
+        :root {
+            --naviga-blue: #00255a;
+            --naviga-gold: #C9A66B;
+        }
+
+        * {
+            transition-property: color, background-color, border-color, box-shadow, transform, opacity;
+            transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+            transition-duration: 300ms;
+        }
 
         .hero-bg {
-            background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('https://picsum.photos/id/1015/2000/1200') center/cover no-repeat;
+            background: linear-gradient(to bottom, rgba(0, 37, 90, 0.8), rgba(15, 23, 42, 0.9)), url('https://picsum.photos/id/1015/2000/1200') center/cover no-repeat;
         }
         .dark .hero-bg {
-            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://picsum.photos/id/1015/2000/1200') center/cover no-repeat;
+            background: linear-gradient(to bottom, rgba(0, 20, 50, 0.9), rgba(10, 15, 25, 0.98)), url('https://picsum.photos/id/1015/2000/1200') center/cover no-repeat;
         }
-        .naviga-gold { color: #C9A66B; }
-        .naviga-blue-bg { background-color: #00255a; }
+        .naviga-gold { color: var(--naviga-gold); }
+        .naviga-blue-bg { background-color: var(--naviga-blue); }
+
+        /* Fintech Glassmorphism */
+        .glass {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+        }
+        .dark .glass {
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Ambient Glows */
+        .glow-btn {
+            position: relative;
+        }
+        .glow-btn::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            box-shadow: 0 0 24px 4px rgba(201, 166, 107, 0.25);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: -1;
+        }
+        .glow-btn:hover::after {
+            opacity: 1;
+        }
 
         /* Animations */
         .animate-in {
             opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: translateY(20px);
         }
         .animate-in.visible {
             opacity: 1;
@@ -32,26 +79,26 @@
         }
 
         .mobile-menu {
-            animation: slideIn 0.4s cubic-bezier(0.32, 0.72, 0, 1) forwards;
+            animation: slideIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
         @keyframes slideIn {
             from { transform: translateX(100%); }
             to { transform: translateX(0); }
         }
 
-        .card-hover {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
         .card-hover:hover {
-            transform: translateY(-4px) scale(1.03);
-            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 25px 40px -10px rgba(0, 37, 90, 0.1), 0 10px 15px -5px rgba(0, 0, 0, 0.05);
+        }
+        .dark .card-hover:hover {
+            box-shadow: 0 25px 40px -10px rgba(0, 0, 0, 0.5), 0 0 20px rgba(201, 166, 107, 0.08);
         }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-900 dark:bg-zinc-950 dark:text-white transition-colors duration-300">
 
     <!-- NAVBAR -->
-    <nav class="bg-white dark:bg-zinc-900 border-b dark:border-zinc-800 sticky top-0 z-50 shadow-sm">
+    <nav class="glass border-b border-transparent dark:border-zinc-800 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
             <div class="flex items-center gap-3">
                 <img src="naviga-logo.png" alt="Naviga GmbH" class="h-11 w-auto block dark:hidden">
@@ -70,7 +117,7 @@
                 <button onclick="toggleDarkMode()" class="w-10 h-10 flex items-center justify-center rounded-2xl hover:bg-gray-100 dark:hover:bg-zinc-800 transition">
                     <i id="theme-icon" class="fa-solid fa-moon text-xl"></i>
                 </button>
-                <a href="#anfrage" class="naviga-blue-bg hover:bg-[#001c4a] dark:bg-white dark:text-[#00255a] dark:hover:bg-gray-200 text-white px-6 py-3 rounded-2xl text-sm font-semibold flex items-center gap-2 transition">
+                <a href="#anfrage" class="naviga-blue-bg hover:bg-[#001c4a] dark:bg-[#C9A66B] dark:text-zinc-950 dark:hover:bg-[#b0925e] text-white px-6 py-3 rounded-2xl text-sm font-semibold flex items-center gap-2 transition glow-btn">
                     <i class="fa-solid fa-handshake"></i>
                     <span class="hidden sm:inline">Kostenloses Erstgespräch</span>
                 </a>
@@ -82,7 +129,7 @@
         </div>
 
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-zinc-900 border-t dark:border-zinc-800 px-6 py-6 mobile-menu">
+        <div id="mobile-menu" class="hidden md:hidden glass border-t border-transparent dark:border-zinc-800 px-6 py-6 mobile-menu">
             <div class="flex flex-col gap-6 text-lg font-medium">
                 <a href="#privat" onclick="toggleMobileMenu()" class="hover:text-[#00255a] dark:hover:text-[#C9A66B]">Privatpersonen</a>
                 <a href="#hypothek" onclick="toggleMobileMenu()" class="hover:text-[#00255a] dark:hover:text-[#C9A66B]">Hypotheken</a>
@@ -108,7 +155,7 @@
                     Naviga GmbH – unabhängige Hypothekenberatung für Privatpersonen.
                 </p>
                 <div class="mt-10">
-                    <a href="#anfrage" class="naviga-blue-bg hover:bg-[#001c4a] dark:bg-white dark:text-[#00255a] dark:hover:bg-gray-200 text-white px-8 py-5 rounded-3xl font-semibold text-lg flex items-center gap-3 inline-flex shadow-xl transition hover:scale-105">
+                    <a href="#anfrage" class="naviga-blue-bg hover:bg-[#001c4a] dark:bg-[#C9A66B] dark:text-zinc-950 dark:hover:bg-[#b0925e] text-white px-8 py-5 rounded-3xl font-semibold text-lg items-center inline-flex gap-3 shadow-xl transition hover:scale-105 glow-btn">
                         <i class="fa-solid fa-calculator"></i>
                         Kostenlose Finanzanalyse starten
                     </a>
