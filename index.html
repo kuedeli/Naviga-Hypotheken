@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Naviga GmbH – Ihre unabhängige Hypothekenberatung für Privatpersonen in der Schweiz.">
+    <meta name="description"
+        content="Naviga GmbH – Ihre unabhängige Hypothekenberatung für Privatpersonen in der Schweiz.">
     <title>Naviga GmbH | Hypotheken &amp; Eigenheimfinanzierung</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap');
-        body { 
-            font-family: 'IBM Plex Sans', system-ui, sans-serif; 
+
+        body {
+            font-family: 'IBM Plex Sans', system-ui, sans-serif;
             -webkit-font-smoothing: antialiased;
         }
 
@@ -28,11 +31,18 @@
         .hero-bg {
             background: linear-gradient(to bottom, rgba(0, 37, 90, 0.8), rgba(15, 23, 42, 0.9)), url('https://picsum.photos/id/1015/2000/1200') center/cover no-repeat;
         }
+
         .dark .hero-bg {
             background: linear-gradient(to bottom, rgba(0, 20, 50, 0.9), rgba(10, 15, 25, 0.98)), url('https://picsum.photos/id/1015/2000/1200') center/cover no-repeat;
         }
-        .naviga-gold { color: var(--naviga-gold); }
-        .naviga-blue-bg { background-color: var(--naviga-blue); }
+
+        .naviga-gold {
+            color: var(--naviga-gold);
+        }
+
+        .naviga-blue-bg {
+            background-color: var(--naviga-blue);
+        }
 
         /* Fintech Glassmorphism */
         .glass {
@@ -42,6 +52,7 @@
             border: 1px solid rgba(255, 255, 255, 0.4);
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
         }
+
         .dark .glass {
             background: rgba(15, 23, 42, 0.75);
             backdrop-filter: blur(20px);
@@ -54,6 +65,7 @@
         .glow-btn {
             position: relative;
         }
+
         .glow-btn::after {
             content: '';
             position: absolute;
@@ -64,6 +76,7 @@
             transition: opacity 0.4s ease;
             z-index: -1;
         }
+
         .glow-btn:hover::after {
             opacity: 1;
         }
@@ -73,6 +86,7 @@
             opacity: 0;
             transform: translateY(20px);
         }
+
         .animate-in.visible {
             opacity: 1;
             transform: translateY(0);
@@ -81,20 +95,28 @@
         .mobile-menu {
             animation: slideIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
+
         @keyframes slideIn {
-            from { transform: translateX(100%); }
-            to { transform: translateX(0); }
+            from {
+                transform: translateX(100%);
+            }
+
+            to {
+                transform: translateX(0);
+            }
         }
 
         .card-hover:hover {
             transform: translateY(-4px) scale(1.02);
             box-shadow: 0 25px 40px -10px rgba(0, 37, 90, 0.1), 0 10px 15px -5px rgba(0, 0, 0, 0.05);
         }
+
         .dark .card-hover:hover {
             box-shadow: 0 25px 40px -10px rgba(0, 0, 0, 0.5), 0 0 20px rgba(201, 166, 107, 0.08);
         }
     </style>
 </head>
+
 <body class="bg-gray-50 text-gray-900 dark:bg-zinc-950 dark:text-white transition-colors duration-300">
 
     <!-- NAVBAR -->
@@ -114,10 +136,12 @@
             </div>
 
             <div class="flex items-center gap-4">
-                <button onclick="toggleDarkMode()" class="w-10 h-10 flex items-center justify-center rounded-2xl hover:bg-gray-100 dark:hover:bg-zinc-800 transition">
+                <button onclick="toggleDarkMode()"
+                    class="w-10 h-10 flex items-center justify-center rounded-2xl hover:bg-gray-100 dark:hover:bg-zinc-800 transition">
                     <i id="theme-icon" class="fa-solid fa-moon text-xl"></i>
                 </button>
-                <a href="#anfrage" class="naviga-blue-bg hover:bg-[#001c4a] dark:bg-[#C9A66B] dark:text-zinc-950 dark:hover:bg-[#b0925e] text-white px-6 py-3 rounded-2xl text-sm font-semibold flex items-center gap-2 transition glow-btn">
+                <a href="#anfrage"
+                    class="naviga-blue-bg hover:bg-[#001c4a] dark:bg-[#C9A66B] dark:text-zinc-950 dark:hover:bg-[#b0925e] text-white px-6 py-3 rounded-2xl text-sm font-semibold flex items-center gap-2 transition glow-btn">
                     <i class="fa-solid fa-handshake"></i>
                     <span class="hidden sm:inline">Kostenloses Erstgespräch</span>
                 </a>
@@ -129,13 +153,19 @@
         </div>
 
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden glass border-t border-transparent dark:border-zinc-800 px-6 py-6 mobile-menu">
+        <div id="mobile-menu"
+            class="hidden md:hidden glass border-t border-transparent dark:border-zinc-800 px-6 py-6 mobile-menu">
             <div class="flex flex-col gap-6 text-lg font-medium">
-                <a href="#privat" onclick="toggleMobileMenu()" class="hover:text-[#00255a] dark:hover:text-[#C9A66B]">Privatpersonen</a>
-                <a href="#hypothek" onclick="toggleMobileMenu()" class="hover:text-[#00255a] dark:hover:text-[#C9A66B]">Hypotheken</a>
-                <a href="#anfrage" onclick="toggleMobileMenu()" class="hover:text-[#00255a] dark:hover:text-[#C9A66B]">Ihre Anfrage</a>
-                <a href="#team" onclick="toggleMobileMenu()" class="hover:text-[#00255a] dark:hover:text-[#C9A66B]">Team</a>
-                <a href="#blog" onclick="toggleMobileMenu()" class="hover:text-[#00255a] dark:hover:text-[#C9A66B]">Blog</a>
+                <a href="#privat" onclick="toggleMobileMenu()"
+                    class="hover:text-[#00255a] dark:hover:text-[#C9A66B]">Privatpersonen</a>
+                <a href="#hypothek" onclick="toggleMobileMenu()"
+                    class="hover:text-[#00255a] dark:hover:text-[#C9A66B]">Hypotheken</a>
+                <a href="#anfrage" onclick="toggleMobileMenu()"
+                    class="hover:text-[#00255a] dark:hover:text-[#C9A66B]">Ihre Anfrage</a>
+                <a href="#team" onclick="toggleMobileMenu()"
+                    class="hover:text-[#00255a] dark:hover:text-[#C9A66B]">Team</a>
+                <a href="#blog" onclick="toggleMobileMenu()"
+                    class="hover:text-[#00255a] dark:hover:text-[#C9A66B]">Blog</a>
             </div>
         </div>
     </nav>
@@ -144,7 +174,8 @@
     <header class="hero-bg text-white py-20 md:py-24">
         <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
             <div class="animate-in" id="hero-content">
-                <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md text-white text-sm px-5 py-2.5 rounded-3xl mb-6">
+                <div
+                    class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md text-white text-sm px-5 py-2.5 rounded-3xl mb-6">
                     Aktuelle Hypothekenzinsen 2026 – ab 1,25 %
                 </div>
                 <h1 class="text-4xl sm:text-5xl md:text-6xl font-semibold leading-tight tracking-tighter">
@@ -155,7 +186,8 @@
                     Naviga GmbH – unabhängige Hypothekenberatung für Privatpersonen.
                 </p>
                 <div class="mt-10">
-                    <a href="#anfrage" class="naviga-blue-bg hover:bg-[#001c4a] dark:bg-[#C9A66B] dark:text-zinc-950 dark:hover:bg-[#b0925e] text-white px-8 py-5 rounded-3xl font-semibold text-lg items-center inline-flex gap-3 shadow-xl transition hover:scale-105 glow-btn">
+                    <a href="#anfrage"
+                        class="naviga-blue-bg hover:bg-[#001c4a] dark:bg-[#C9A66B] dark:text-zinc-950 dark:hover:bg-[#b0925e] text-white px-8 py-5 rounded-3xl font-semibold text-lg items-center inline-flex gap-3 shadow-xl transition hover:scale-105 glow-btn">
                         <i class="fa-solid fa-calculator"></i>
                         Kostenlose Finanzanalyse starten
                     </a>
@@ -175,20 +207,26 @@
                 <h2 class="text-4xl font-semibold mt-3 dark:text-white">Klarheit in Ihren Finanzen</h2>
             </div>
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="animate-in card-hover bg-gray-50 dark:bg-zinc-800 rounded-3xl p-8 hover:shadow-xl transition">
+                <div
+                    class="animate-in card-hover bg-gray-50 dark:bg-zinc-800 rounded-3xl p-8 hover:shadow-xl transition">
                     <div class="text-4xl mb-6">👨‍👧‍👦</div>
                     <h4 class="font-semibold text-xl dark:text-white">Junge Familie – Erstes Eigenheim</h4>
-                    <p class="mt-3 text-gray-600 dark:text-zinc-400">Tragbarkeit, Eigenkapital und 2./3. Säule optimieren.</p>
+                    <p class="mt-3 text-gray-600 dark:text-zinc-400">Tragbarkeit, Eigenkapital und 2./3. Säule
+                        optimieren.</p>
                 </div>
-                <div class="animate-in card-hover bg-gray-50 dark:bg-zinc-800 rounded-3xl p-8 hover:shadow-xl transition">
+                <div
+                    class="animate-in card-hover bg-gray-50 dark:bg-zinc-800 rounded-3xl p-8 hover:shadow-xl transition">
                     <div class="text-4xl mb-6">💼</div>
                     <h4 class="font-semibold text-xl dark:text-white">Berufstätige Singles &amp; Paare</h4>
-                    <p class="mt-3 text-gray-600 dark:text-zinc-400">Jobwechsel, Lohnerhöhung – alles in einer Finanzplanung.</p>
+                    <p class="mt-3 text-gray-600 dark:text-zinc-400">Jobwechsel, Lohnerhöhung – alles in einer
+                        Finanzplanung.</p>
                 </div>
-                <div class="animate-in card-hover bg-gray-50 dark:bg-zinc-800 rounded-3xl p-8 hover:shadow-xl transition">
+                <div
+                    class="animate-in card-hover bg-gray-50 dark:bg-zinc-800 rounded-3xl p-8 hover:shadow-xl transition">
                     <div class="text-4xl mb-6">👴</div>
                     <h4 class="font-semibold text-xl dark:text-white">Zukünftige Pensionierte</h4>
-                    <p class="mt-3 text-gray-600 dark:text-zinc-400">Nachlassplanung &amp; Altersvorsorge mit Eigenheim.</p>
+                    <p class="mt-3 text-gray-600 dark:text-zinc-400">Nachlassplanung &amp; Altersvorsorge mit Eigenheim.
+                    </p>
                 </div>
             </div>
         </div>
@@ -204,36 +242,44 @@
 
             <div class="grid md:grid-cols-4 gap-8">
                 <div class="animate-in card-hover text-center">
-                    <div class="mx-auto w-32 h-32 rounded-full overflow-hidden mb-4 border-4 border-white dark:border-zinc-800 shadow-md">
+                    <div
+                        class="mx-auto w-32 h-32 rounded-full overflow-hidden mb-4 border-4 border-white dark:border-zinc-800 shadow-md">
                         <img src="Emmanuel.jpg" alt="Emmanuel Bertsch" class="w-full h-full object-cover">
                     </div>
                     <h4 class="font-semibold text-xl dark:text-white">Emmanuel Bertsch</h4>
                     <p class="text-[#00255a] dark:text-[#C9A66B]">"Aussenminister"</p>
-                    <p class="text-sm text-gray-600 dark:text-zinc-400 mt-1">Versicherungsvermittler VBV<br>Zert. Vermögensberater IAF</p>
+                    <p class="text-sm text-gray-600 dark:text-zinc-400 mt-1">Versicherungsvermittler VBV<br>Zert.
+                        Vermögensberater IAF</p>
                 </div>
                 <div class="animate-in card-hover text-center">
-                    <div class="mx-auto w-32 h-32 rounded-full overflow-hidden mb-4 border-4 border-white dark:border-zinc-800 shadow-md">
+                    <div
+                        class="mx-auto w-32 h-32 rounded-full overflow-hidden mb-4 border-4 border-white dark:border-zinc-800 shadow-md">
                         <img src="Gabriel.jpg" alt="Gabriel Mathys" class="w-full h-full object-cover">
                     </div>
                     <h4 class="font-semibold text-xl dark:text-white">Gabriel Mathys</h4>
                     <p class="text-[#00255a] dark:text-[#C9A66B]">"Schatzmeister"</p>
-                    <p class="text-sm text-gray-600 dark:text-zinc-400 mt-1">B.Sc. Business Administration<br>Dipl. Finanzberater IAF</p>
+                    <p class="text-sm text-gray-600 dark:text-zinc-400 mt-1">B.Sc. Business Administration<br>Dipl.
+                        Finanzberater IAF</p>
                 </div>
                 <div class="animate-in card-hover text-center">
-                    <div class="mx-auto w-32 h-32 rounded-full overflow-hidden mb-4 border-4 border-white dark:border-zinc-800 shadow-md">
+                    <div
+                        class="mx-auto w-32 h-32 rounded-full overflow-hidden mb-4 border-4 border-white dark:border-zinc-800 shadow-md">
                         <img src="Levin.jpg" alt="Levin Röthlisberger" class="w-full h-full object-cover">
                     </div>
                     <h4 class="font-semibold text-xl dark:text-white">Levin Röthlisberger</h4>
                     <p class="text-[#00255a] dark:text-[#C9A66B]">"Finanzpanzer"</p>
-                    <p class="text-sm text-gray-600 dark:text-zinc-400 mt-1">Versicherungsvermittler VBV<br>Dipl. Finanzberater IAF</p>
+                    <p class="text-sm text-gray-600 dark:text-zinc-400 mt-1">Versicherungsvermittler VBV<br>Dipl.
+                        Finanzberater IAF</p>
                 </div>
                 <div class="animate-in card-hover text-center">
-                    <div class="mx-auto w-32 h-32 rounded-full overflow-hidden mb-4 border-4 border-white dark:border-zinc-800 shadow-md">
+                    <div
+                        class="mx-auto w-32 h-32 rounded-full overflow-hidden mb-4 border-4 border-white dark:border-zinc-800 shadow-md">
                         <img src="Kaspar.jpg" alt="Kaspar Matthäus" class="w-full h-full object-cover">
                     </div>
                     <h4 class="font-semibold text-xl dark:text-white">Kaspar Matthäus</h4>
                     <p class="text-[#00255a] dark:text-[#C9A66B]">"Koch"</p>
-                    <p class="text-sm text-gray-600 dark:text-zinc-400 mt-1">Versicherungsvermittler VBV<br>Marketing &amp; Prozesse</p>
+                    <p class="text-sm text-gray-600 dark:text-zinc-400 mt-1">Versicherungsvermittler VBV<br>Marketing
+                        &amp; Prozesse</p>
                 </div>
             </div>
         </div>
@@ -245,31 +291,40 @@
             <div class="text-center mb-12 animate-in" id="section-anfrage">
                 <span class="text-[#00255a] dark:text-[#C9A66B] font-semibold tracking-widest">JETZT ANFRAGEN</span>
                 <h2 class="text-4xl font-semibold mt-3 dark:text-white">Welche Finanzierung brauchen Sie?</h2>
-                <p class="mt-4 text-gray-600 dark:text-zinc-400">Wählen Sie Ihr Anliegen – wir melden uns innerhalb von 24 Stunden.</p>
+                <p class="mt-4 text-gray-600 dark:text-zinc-400">Wählen Sie Ihr Anliegen – wir melden uns innerhalb von
+                    24 Stunden.</p>
             </div>
 
-            <form id="anfrage-form" onsubmit="handleAnfrage(event)" class="bg-gray-50 dark:bg-zinc-800 rounded-3xl p-10">
+            <form id="anfrage-form" onsubmit="handleAnfrage(event)"
+                class="bg-gray-50 dark:bg-zinc-800 rounded-3xl p-10">
                 <!-- Replace 'YOUR_WEB3FORMS_ACCESS_KEY' with your actual key from web3forms.com -->
-                <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
-                
+                <input type="hidden" name="access_key" value="e87d6330-a1f1-42d6-90c0-188ea6b4290a">
+
                 <div class="grid md:grid-cols-3 gap-4 mb-8">
                     <label class="cursor-pointer">
-                        <input type="radio" name="wunsch" value="Hypothekenanalyse einer bestehenden Finanzierung" class="peer sr-only" checked>
-                        <div class="peer-checked:border-[#00255a] peer-checked:bg-blue-50 dark:peer-checked:border-[#C9A66B] dark:peer-checked:bg-zinc-900 border-2 border-transparent bg-white dark:bg-zinc-900 rounded-3xl p-6 text-center hover:shadow transition">
+                        <input type="radio" name="wunsch" value="Hypothekenanalyse einer bestehenden Finanzierung"
+                            class="peer sr-only" checked>
+                        <div
+                            class="peer-checked:border-[#00255a] peer-checked:bg-blue-50 dark:peer-checked:border-[#C9A66B] dark:peer-checked:bg-zinc-900 border-2 border-transparent bg-white dark:bg-zinc-900 rounded-3xl p-6 text-center hover:shadow transition">
                             <i class="fa-solid fa-chart-pie text-4xl naviga-gold dark:text-[#C9A66B] mb-4"></i>
-                            <p class="font-semibold dark:text-white">Hypothekenanalyse einer bestehenden Finanzierung</p>
+                            <p class="font-semibold dark:text-white">Hypothekenanalyse einer bestehenden Finanzierung
+                            </p>
                         </div>
                     </label>
                     <label class="cursor-pointer">
-                        <input type="radio" name="wunsch" value="eine Neu-Finanzierung eines Hauses" class="peer sr-only">
-                        <div class="peer-checked:border-[#00255a] peer-checked:bg-blue-50 dark:peer-checked:border-[#C9A66B] dark:peer-checked:bg-zinc-900 border-2 border-transparent bg-white dark:bg-zinc-900 rounded-3xl p-6 text-center hover:shadow transition">
+                        <input type="radio" name="wunsch" value="eine Neu-Finanzierung eines Hauses"
+                            class="peer sr-only">
+                        <div
+                            class="peer-checked:border-[#00255a] peer-checked:bg-blue-50 dark:peer-checked:border-[#C9A66B] dark:peer-checked:bg-zinc-900 border-2 border-transparent bg-white dark:bg-zinc-900 rounded-3xl p-6 text-center hover:shadow transition">
                             <i class="fa-solid fa-house text-4xl naviga-gold dark:text-[#C9A66B] mb-4"></i>
                             <p class="font-semibold dark:text-white">Neu-Finanzierung eines Hauses</p>
                         </div>
                     </label>
                     <label class="cursor-pointer">
-                        <input type="radio" name="wunsch" value="Finanzierung einer Renditeimmobilie" class="peer sr-only">
-                        <div class="peer-checked:border-[#00255a] peer-checked:bg-blue-50 dark:peer-checked:border-[#C9A66B] dark:peer-checked:bg-zinc-900 border-2 border-transparent bg-white dark:bg-zinc-900 rounded-3xl p-6 text-center hover:shadow transition">
+                        <input type="radio" name="wunsch" value="Finanzierung einer Renditeimmobilie"
+                            class="peer sr-only">
+                        <div
+                            class="peer-checked:border-[#00255a] peer-checked:bg-blue-50 dark:peer-checked:border-[#C9A66B] dark:peer-checked:bg-zinc-900 border-2 border-transparent bg-white dark:bg-zinc-900 rounded-3xl p-6 text-center hover:shadow transition">
                             <i class="fa-solid fa-building text-4xl naviga-gold dark:text-[#C9A66B] mb-4"></i>
                             <p class="font-semibold dark:text-white">Finanzierung einer Renditeimmobilie</p>
                         </div>
@@ -279,20 +334,24 @@
                 <div class="grid md:grid-cols-2 gap-6">
                     <div>
                         <label class="block text-sm font-medium mb-2 dark:text-zinc-300">Vorname &amp; Nachname</label>
-                        <input type="text" name="Name" id="name" required class="w-full bg-white dark:bg-zinc-900 border dark:border-zinc-700 rounded-2xl px-6 py-4 focus:outline-none focus:border-[#00255a] dark:focus:border-[#C9A66B]">
+                        <input type="text" name="Name" id="name" required
+                            class="w-full bg-white dark:bg-zinc-900 border dark:border-zinc-700 rounded-2xl px-6 py-4 focus:outline-none focus:border-[#00255a] dark:focus:border-[#C9A66B]">
                     </div>
                     <div>
                         <label class="block text-sm font-medium mb-2 dark:text-zinc-300">E-Mail-Adresse</label>
-                        <input type="email" name="Email" id="email" required class="w-full bg-white dark:bg-zinc-900 border dark:border-zinc-700 rounded-2xl px-6 py-4 focus:outline-none focus:border-[#00255a] dark:focus:border-[#C9A66B]">
+                        <input type="email" name="Email" id="email" required
+                            class="w-full bg-white dark:bg-zinc-900 border dark:border-zinc-700 rounded-2xl px-6 py-4 focus:outline-none focus:border-[#00255a] dark:focus:border-[#C9A66B]">
                     </div>
                 </div>
 
                 <div class="mt-6">
                     <label class="block text-sm font-medium mb-2 dark:text-zinc-300">Nachricht (optional)</label>
-                    <textarea name="Nachricht" id="message" rows="3" class="w-full bg-white dark:bg-zinc-900 border dark:border-zinc-700 rounded-3xl px-6 py-4 focus:outline-none focus:border-[#00255a] dark:focus:border-[#C9A66B]"></textarea>
+                    <textarea name="Nachricht" id="message" rows="3"
+                        class="w-full bg-white dark:bg-zinc-900 border dark:border-zinc-700 rounded-3xl px-6 py-4 focus:outline-none focus:border-[#00255a] dark:focus:border-[#C9A66B]"></textarea>
                 </div>
 
-                <button type="submit" class="mt-8 w-full naviga-blue-bg hover:bg-[#001c4a] text-white py-5 rounded-3xl font-semibold text-xl flex items-center justify-center gap-3">
+                <button type="submit"
+                    class="mt-8 w-full naviga-blue-bg hover:bg-[#001c4a] text-white py-5 rounded-3xl font-semibold text-xl flex items-center justify-center gap-3">
                     <i class="fa-solid fa-paper-plane"></i>
                     Anfrage absenden
                 </button>
@@ -303,12 +362,14 @@
     <!-- UNSERE BERATUNG IN AKTION -->
     <section class="py-16 bg-white dark:bg-zinc-900">
         <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-4xl font-semibold text-center mb-10 dark:text-white animate-in" id="section-aktion">Unsere Beratung in Aktion</h2>
+            <h2 class="text-4xl font-semibold text-center mb-10 dark:text-white animate-in" id="section-aktion">Unsere
+                Beratung in Aktion</h2>
             <div class="grid md:grid-cols-2 gap-8 items-center">
                 <img src="naviga-seminar.jpg" alt="Naviga Seminar" class="rounded-3xl shadow-xl">
                 <div class="text-center md:text-left">
                     <p class="text-2xl font-medium dark:text-white">Persönlich. Kompetent. Auf Augenhöhe.</p>
-                    <p class="mt-4 text-gray-600 dark:text-zinc-400">Ob Einzelberatung oder Gruppenseminar – bei Naviga stehen Sie immer im Mittelpunkt.</p>
+                    <p class="mt-4 text-gray-600 dark:text-zinc-400">Ob Einzelberatung oder Gruppenseminar – bei Naviga
+                        stehen Sie immer im Mittelpunkt.</p>
                 </div>
             </div>
         </div>
@@ -317,8 +378,10 @@
     <!-- BLOG -->
     <section id="blog" class="py-20 bg-white dark:bg-zinc-900 border-t dark:border-zinc-800">
         <div class="max-w-7xl mx-auto px-6">
-            <span class="uppercase text-xs tracking-widest font-medium naviga-gold dark:text-[#C9A66B]">Blog • April 2026</span>
-            <h2 class="text-4xl font-semibold mt-3 dark:text-white">Hypotheken in der Schweiz 2026: Was Sie jetzt wissen müssen</h2>
+            <span class="uppercase text-xs tracking-widest font-medium naviga-gold dark:text-[#C9A66B]">Blog • April
+                2026</span>
+            <h2 class="text-4xl font-semibold mt-3 dark:text-white">Hypotheken in der Schweiz 2026: Was Sie jetzt wissen
+                müssen</h2>
         </div>
     </section>
 
@@ -366,12 +429,12 @@
 
         async function handleAnfrage(e) {
             e.preventDefault();
-            
+
             const form = e.target;
             const formData = new FormData(form);
             const button = form.querySelector('button[type="submit"]');
             const originalText = button.innerHTML;
-            
+
             // Set button state to loading
             button.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sende Anfrage...';
             button.disabled = true;
@@ -381,7 +444,7 @@
                     method: 'POST',
                     body: formData
                 });
-                
+
                 const data = await response.json();
 
                 if (data.success) {
@@ -389,7 +452,7 @@
                     const selected = document.querySelector('input[name="wunsch"]:checked').value;
                     alert(`✅ Anfrage für „${selected}“ wurde gesendet!\n\nWir haben Ihre Nachricht erhalten und melden uns innerhalb von 24 Stunden bei ${name}.`);
                     form.reset();
-                    
+
                     const menu = document.getElementById('mobile-menu');
                     if (menu && !menu.classList.contains('hidden')) toggleMobileMenu();
                 } else {
@@ -412,4 +475,5 @@
         };
     </script>
 </body>
+
 </html>
