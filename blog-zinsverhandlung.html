@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Zinsverhandlung bei Hypotheken – Warum Sie das erste Bankangebot nie annehmen sollten. Ein Expertenbeitrag von Naviga GmbH.">
+    <title>Zinsverhandlung | Naviga GmbH Blog</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'IBM Plex Sans', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+        :root { --naviga-blue: #00255a; --naviga-gold: #C9A66B; --dark-logo-scale: 1.15; }
+        html { scroll-behavior: smooth; scroll-padding-top: 110px; }
+        * { transition-property: color, background-color, border-color, box-shadow, transform, opacity; transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1); transition-duration: 300ms; }
+        .naviga-gold { color: var(--naviga-gold); }
+        .naviga-blue-bg { background-color: var(--naviga-blue); }
+        .glass { background: rgba(255,255,255,0.8); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.4); box-shadow: 0 4px 30px rgba(0,0,0,0.05); }
+        .dark .glass { background: rgba(15,23,42,0.75); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.05); box-shadow: 0 4px 30px rgba(0,0,0,0.3); }
+        .glow-btn { position: relative; }
+        .glow-btn::after { content: ''; position: absolute; inset: 0; border-radius: inherit; box-shadow: 0 0 24px 4px rgba(201,166,107,0.25); opacity: 0; transition: opacity 0.4s ease; z-index: -1; }
+        .glow-btn:hover::after { opacity: 1; }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-900 dark:bg-zinc-950 dark:text-white transition-colors duration-300">
+
+    <!-- NAVBAR -->
+    <nav class="glass border-b border-transparent dark:border-zinc-800 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3">
+                <img src="naviga-logo.png" alt="Naviga GmbH" class="h-11 object-contain w-auto block dark:hidden">
+                <img src="naviga-logo-dark.png" alt="Naviga GmbH" class="h-11 object-contain w-auto hidden dark:block" style="transform: scale(var(--dark-logo-scale)); transform-origin: left center;">
+            </a>
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+                <a href="index.html#privat" class="hover:text-[#00255a] dark:hover:text-[#C9A66B] transition">Privatpersonen</a>
+                <a href="index.html#hypothek" class="hover:text-[#00255a] dark:hover:text-[#C9A66B] transition">Hypotheken</a>
+                <a href="index.html#anfrage" class="hover:text-[#00255a] dark:hover:text-[#C9A66B] transition">Ihre Anfrage</a>
+                <a href="index.html#team" class="hover:text-[#00255a] dark:hover:text-[#C9A66B] transition">Team</a>
+                <a href="index.html#blog" class="hover:text-[#00255a] dark:hover:text-[#C9A66B] transition">Blog</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <button onclick="toggleDarkMode()" class="w-10 h-10 flex items-center justify-center rounded-2xl hover:bg-gray-100 dark:hover:bg-zinc-800 transition">
+                    <i id="theme-icon" class="fa-solid fa-moon text-xl"></i>
+                </button>
+                <a href="index.html#anfrage" class="naviga-blue-bg hover:bg-[#001c4a] dark:bg-[#C9A66B] dark:text-zinc-950 dark:hover:bg-[#b0925e] text-white px-6 py-3 rounded-2xl text-sm font-semibold flex items-center gap-2 transition glow-btn">
+                    <i class="fa-solid fa-handshake"></i>
+                    <span class="hidden sm:inline">Kostenloses Erstgespräch</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- BLOG ARTICLE -->
+    <main class="pt-32 pb-20 bg-white dark:bg-zinc-950 min-h-screen">
+        <article class="max-w-3xl mx-auto px-6">
+            <a href="index.html#blog" class="inline-flex items-center gap-2 text-sm font-semibold text-[#00255a] dark:text-[#C9A66B] mb-8 hover:underline">
+                <i class="fa-solid fa-arrow-left"></i> Zurück zur Übersicht
+            </a>
+
+            <div class="mb-10">
+                <span class="uppercase text-xs tracking-widest font-bold bg-blue-50 text-[#00255a] dark:bg-zinc-900 dark:text-[#C9A66B] px-3 py-1 rounded-full mb-4 inline-block">Zinsverhandlung</span>
+                <h1 class="text-4xl md:text-5xl font-bold mt-4 mb-6 leading-tight dark:text-white">Im Zins-Dschungel punkten: Warum Sie Banken gegeneinander ausspielen sollten.</h1>
+                <div class="flex items-center gap-4 text-sm text-gray-500 dark:text-zinc-400">
+                    <span><i class="fa-regular fa-calendar mr-1"></i> 2. April 2026</span>
+                    <span><i class="fa-regular fa-clock mr-1"></i> 6 Min. Lesezeit</span>
+                </div>
+            </div>
+
+            <div class="max-w-none text-gray-700 dark:text-zinc-300 leading-relaxed space-y-6">
+                <p class="text-xl font-medium mb-8 text-gray-900 dark:text-white">Der wohl grösste Fehler beim Kauf oder bei der Verlängerung einer Hypothek ist das blinde Akzeptieren des ersten Angebots der Hausbank. Banken sind gewinnorientierte Unternehmen und der sogenannte «Schaufensterzins» enthält fast immer eine ordentliche Portion Marge.</p>
+
+                <h2 class="text-2xl font-bold text-[#00255a] dark:text-[#C9A66B] mt-10 mb-4">Die Wahrheit über Schaufensterzinsen</h2>
+                <p>Die offiziellen Hypothekenzinsen, die auf den Websites der Kantonal- oder Grossbanken publiziert werden, sind <strong>Maximalzinsen</strong>. Daten der <a href="https://www.snb.ch" target="_blank" class="text-[#C9A66B] hover:underline font-semibold">Schweizerischen Nationalbank (SNB)</a> zeigen immer wieder auf, dass die effektiv abgeschlossenen Zinsmargen massiv unter den publizierten Richtzinsen liegen können.</p>
+                <p>So beträgt die typische Differenz zwischen dem publizierten «Schaufensterzins» und dem tatsächlich verhandelbaren Satz oft <strong>0.3% bis 0.6%</strong>. Bei einer Hypothek von CHF 800'000 entspricht das einem Unterschied von CHF 2'400 bis CHF 4'800 pro Jahr – Geld, das Sie einfach verschenken, wenn Sie nicht verhandeln.</p>
+
+                <h2 class="text-2xl font-bold text-[#00255a] dark:text-[#C9A66B] mt-10 mb-4">Das «Gegenangebot-Prinzip» – so funktioniert es</h2>
+                <p>Der Zinsmarkt funktioniert als Handelsmarkt. Sobald Sie das Konkurrenzangebot einer zweiten oder gar dritten Bank physisch vorlegen können, wird Ihr Bankberater «plötzlich» völlig neue Rahmenbedingungen beim Vorgesetzten erfragen können.</p>
+
+                <div class="bg-gray-50 dark:bg-zinc-800 border border-gray-200 dark:border-zinc-700 p-8 rounded-2xl my-8">
+                    <h3 class="text-xl font-bold mb-6 dark:text-white"><i class="fa-solid fa-list-ol text-[#C9A66B] mr-2"></i> Ihre 3-Schritte-Strategie</h3>
+                    <div class="space-y-6">
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 w-10 h-10 rounded-full naviga-blue-bg dark:bg-[#C9A66B] text-white dark:text-zinc-950 flex items-center justify-center font-bold text-lg">1</div>
+                            <div>
+                                <h4 class="font-bold dark:text-white mb-1">Erstangebot einholen</h4>
+                                <p class="text-sm text-gray-600 dark:text-zinc-400">Gehen Sie zu Ihrer Hausbank und holen Sie deren offizielles Hypothekarangebot ein. Lassen Sie sich alles schriftlich bestätigen.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 w-10 h-10 rounded-full naviga-blue-bg dark:bg-[#C9A66B] text-white dark:text-zinc-950 flex items-center justify-center font-bold text-lg">2</div>
+                            <div>
+                                <h4 class="font-bold dark:text-white mb-1">Konkurrenzofferten sammeln</h4>
+                                <p class="text-sm text-gray-600 dark:text-zinc-400">Kontaktieren Sie mindestens 2–3 weitere Institute (Kantonalbanken, Versicherungen, Onlinebanken). Verglichen werden: effektiver Zins, Laufzeit, Gebühren.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 w-10 h-10 rounded-full naviga-blue-bg dark:bg-[#C9A66B] text-white dark:text-zinc-950 flex items-center justify-center font-bold text-lg">3</div>
+                            <div>
+                                <h4 class="font-bold dark:text-white mb-1">Nachverhandeln</h4>
+                                <p class="text-sm text-gray-600 dark:text-zinc-400">Konfrontieren Sie Ihre Hausbank mit dem tiefsten Konkurrenzangebot. In der Regel senkt diese sofort ihren Zinssatz um 0.2 – 0.5%.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 class="text-2xl font-bold text-[#00255a] dark:text-[#C9A66B] mt-10 mb-4">Wie viel Geld geht hier verloren?</h2>
+                <div class="bg-gray-50 dark:bg-zinc-800 border border-gray-200 dark:border-zinc-700 p-6 rounded-2xl my-8">
+                    <h3 class="text-xl font-bold mb-4 dark:text-white">Rechenbeispiel: Festhypothek 10 Jahre</h3>
+                    <ul class="list-none space-y-2">
+                        <li class="flex justify-between border-b dark:border-zinc-700 pb-2"><span>Eigene Hypothek:</span> <strong>CHF 1'000'000</strong></li>
+                        <li class="flex justify-between border-b dark:border-zinc-700 pb-2"><span>Erstes Angebot Hausbank:</span> <strong>2.10% (10 Jahre fest)</strong></li>
+                        <li class="flex justify-between border-b dark:border-zinc-700 pb-2"><span>Nachverhandeltes Angebot:</span> <strong>1.65%</strong></li>
+                        <li class="flex justify-between border-b dark:border-zinc-700 pb-2 text-[#00255a] dark:text-[#C9A66B]"><span>Jährliche Einsparung:</span> <strong>CHF 4'500</strong></li>
+                        <li class="flex justify-between pt-2 text-xl font-bold"><span>Totale Ersparnis (10 Jahre):</span> <span class="text-[#00255a] dark:text-[#C9A66B]">CHF 45'000</span></li>
+                    </ul>
+                </div>
+
+                <h2 class="text-2xl font-bold text-[#00255a] dark:text-[#C9A66B] mt-10 mb-4">Warum Naviga als Partner unverzichtbar ist</h2>
+                <p>Es ist zeitraubend und anstrengend, bei Banken Dossiers einzureichen und zähe Verhandlungsgespräche zu führen. An diesem Punkt kommt Naviga ins Spiel. Wir kennen den absolut minimalen Refinanzierungssatz des Marktes an jedem beliebigen Tag.</p>
+                <p>Wir holen nicht nur mehrere Angebote für Sie ein, sondern wir übernehmen den <strong>kompletten Auktionsprozess</strong>, bei dem die Banken um Ihre günstige Finanzierung konkurrieren müssen. Sie lehnen sich zurück und unterschreiben bei dem Finanzinstitut, das die besten Konditionen bietet.</p>
+
+                <h2 class="text-2xl font-bold text-[#00255a] dark:text-[#C9A66B] mt-10 mb-4">Quellen & weiterführende Informationen</h2>
+                <ul class="list-disc pl-5 space-y-2">
+                    <li><a href="https://www.snb.ch/de/ifor/finmkt/id/finmkt_hyporef" target="_blank" class="text-[#C9A66B] hover:underline font-semibold">Schweizerische Nationalbank (SNB)</a> – Historische Hypothekarzins-Referenzdaten</li>
+                    <li><a href="https://www.moneyland.ch/de/hypotheken-zinsen-vergleich" target="_blank" class="text-[#C9A66B] hover:underline font-semibold">Moneyland.ch – Hypothekenzinsen-Vergleich</a> – Aktueller Marktüberblick</li>
+                    <li><a href="https://www.finma.ch/de/" target="_blank" class="text-[#C9A66B] hover:underline font-semibold">FINMA</a> – Eidgenössische Finanzmarktaufsicht, regulatorischer Rahmen</li>
+                </ul>
+
+                <div class="bg-blue-50 dark:bg-[#00255a]/20 p-6 rounded-2xl border-l-4 border-[#00255a] dark:border-[#C9A66B] my-8">
+                    <p class="m-0 font-medium text-[#00255a] dark:text-white"><strong>Fazit:</strong> Nehmen Sie das erste Angebot niemals an. Wer verhandelt – oder verhandeln lässt – spart über die Laufzeit einer Hypothek oft fünfstellige Beträge. Als unabhängiger Berater übernimmt Naviga den gesamten Marktvergleich und die Preisverhandlung für Sie.</p>
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="mt-16 p-10 bg-gray-50 dark:bg-zinc-900 rounded-3xl border border-gray-100 dark:border-zinc-800 text-center shadow-lg relative overflow-hidden">
+                <div class="absolute -top-24 -right-24 w-48 h-48 bg-[#C9A66B] opacity-10 rounded-full blur-3xl"></div>
+                <div class="absolute -bottom-24 -left-24 w-48 h-48 bg-[#00255a] opacity-10 rounded-full blur-3xl"></div>
+                <h3 class="text-3xl font-bold dark:text-white mb-4 relative z-10">Lassen Sie uns Ihre Finanzierung optimieren.</h3>
+                <p class="text-gray-600 dark:text-zinc-400 mb-8 max-w-xl mx-auto relative z-10">Naviga vergleicht für Sie komplett unabhängig alle Marktangebote und übernimmt den gesamten Verhandlungsprozess.</p>
+                <a href="index.html#anfrage" class="naviga-blue-bg hover:bg-[#001c4a] dark:bg-[#C9A66B] dark:text-zinc-950 dark:hover:bg-[#b0925e] text-white px-8 py-4 rounded-full font-semibold inline-flex items-center gap-3 transition glow-btn relative z-10 shadow-xl">
+                    <i class="fa-solid fa-calculator"></i> Jetzt Beratungstermin vereinbaren
+                </a>
+            </div>
+        </article>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-900 text-white/70 py-12 text-sm text-center">
+        © 2026 Naviga GmbH • Navigation durch die Finanzwelt
+    </footer>
+
+    <script>
+        tailwind.config = { darkMode: 'class' };
+        function toggleDarkMode() {
+            const isDark = document.documentElement.classList.toggle('dark');
+            localStorage.setItem('darkMode', isDark);
+            const icon = document.getElementById('theme-icon');
+            icon.classList.toggle('fa-moon', !isDark);
+            icon.classList.toggle('fa-sun', isDark);
+        }
+        window.onload = () => {
+            if (localStorage.getItem('darkMode') === 'true' || window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                document.documentElement.classList.add('dark');
+            }
+        };
+    </script>
+</body>
+</html>
