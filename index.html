@@ -20,6 +20,13 @@
         :root {
             --naviga-blue: #00255a;
             --naviga-gold: #C9A66B;
+            /* Adjust this value to make the dark logo perfectly match the light logo visually */
+            --dark-logo-scale: 1.15; 
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 110px; /* Provides space above sections when jumping to links */
         }
 
         * {
@@ -123,8 +130,8 @@
     <nav class="glass border-b border-transparent dark:border-zinc-800 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
             <div class="flex items-center gap-3">
-                <img src="naviga-logo.png" alt="Naviga GmbH" class="h-11 w-auto block dark:hidden">
-                <img src="naviga-logo-dark.png" alt="Naviga GmbH" class="h-11 w-auto hidden dark:block">
+                <img src="naviga-logo.png" alt="Naviga GmbH" class="h-11 object-contain w-auto block dark:hidden">
+                <img src="naviga-logo-dark.png" alt="Naviga GmbH" class="h-11 object-contain w-auto hidden dark:block" style="transform: scale(var(--dark-logo-scale)); transform-origin: left center;">
             </div>
 
             <div class="hidden md:flex items-center gap-8 text-sm font-medium">
